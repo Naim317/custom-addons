@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <!--Search View-->
+        <record id="test_search_view" model="ir.ui.view">
+            <field name="name">test.search.view</field>
+            <field name="model">test</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="email"/>
+                    <field name="employeeId"/>
+                    <field name="address"/>
+                    <field name="phone"/>
+                    <field name="designation"/>
+                </search>
+            </field>
+        </record>
+
+        <!--Tree View-->
+        <record id="test_tree_view" model="ir.ui.view">
+            <field name="name">test.tree.view</field>
+            <field name="model">test</field>
+            <field name="arch" type="xml">
+                <tree string="Test">
+                    <field name="name"/>
+                    <field name="email"/>
+                    <field name="employeeId"/>
+                    <field name="address"/>
+                    <field name="phone"/>
+                    <field name="designation"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--Form View-->
+        <record id="test_form_view" model="ir.ui.view">
+            <field name="name">test.form.view</field>
+            <field name="model">test</field>
+            <field name="arch" type="xml">
+                <form string="Test">
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="email"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="employeeId"/>
+                        </group>
+                        <group>
+                            <field name="address"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="phone"/>
+                        </group>
+                        <group>
+                            <field name="designation"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!--Act Window & Menu Configuration-->
+        <record id="action_test_view" model="ir.actions.act_window">
+            <field name="name">Test</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">test</field>
+            <field name="domain">[]</field>
+            <!-- <field name="view_type">form</field> -->
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="test_tree_view"/>
+        </record>
+
+    </data>
+</odoo>
