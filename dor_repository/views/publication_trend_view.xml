@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Search Filter -->
+        <record id="publication_trend_search_view" model="ir.ui.view">
+            <field name="name">publication.trend.search.view</field>
+            <field name="model">publication.trend</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="email"/>
+                    <field name="author_ids"/>
+                </search>
+            </field>
+        </record>
+
+
+        <!-- Tree View -->
+        <record id="publication_trend_tree_view" model="ir.ui.view">
+            <field name="name">publication.trend.tree.view</field>
+            <field name="model">publication.trend</field>
+            <field name="arch" type="xml">
+                <tree string="Publication Trends">
+                    <field name="name"/>
+                    <field name="first_author"/>
+                    <field name="author_ids" widget="many2many_tags"/>
+                    <field name="department" />
+                    <field name="email"/>
+                    <field name="publication_year"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- Form View -->
+        <record id="publication_trend_form_view" model="ir.ui.view">
+            <field name="name">publication.trend.form.view</field>
+            <field name="model">publication.trend</field>
+            <field name="arch" type="xml">
+                <form string="Publication Trend">
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="first_author"/>
+                            <field name="email"/>
+                            <field name="faculty"/>
+                            <field name="research_area"/>
+                            <field name="cj_name"/>
+                            <field name="publication_year"/>
+                            <field name="student_involvement"/>
+                            <field name="finance_by"/>
+                            <field name="impact"/>
+                        </group>
+                        <group>
+                            <field name="keywords"/>
+                            <field name="author_ids" widget="many2many_tags"/>
+                            <field name="phone"/>
+                            <field name="department"/>
+                            <field name="impact_factor"/>
+                            <field name="cj_link" widget="url"/>
+                            <field name="published_research_work"/>
+                            <field name="indexed"/>
+                            <field name="remarks"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="researchers"/>
+                    </group>
+                    <group>
+                        <field name="abstract"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Act Window & Menu Configuration -->
+        <record id="action_publication_trend_view" model="ir.actions.act_window">
+            <field name="name">Publication Trends</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">publication.trend</field>
+            <field name="domain">[]</field>
+            <!-- <field name="view_type">form</field> -->
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="publication_trend_tree_view"/>
+        </record>
+
+    </data>
+</odoo>
