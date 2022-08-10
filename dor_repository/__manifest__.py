@@ -1,37 +1,36 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "dor_repository",
-
-    'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
-
+    'name': 'DoR Repository',
+    'summary': """All Scopus Publication of DIU""",
     'description': """
-        Long description of module's purpose
+DoR Repository
+==============
+Yearly Scopus indexed publications of DIU faculty will be made available in this module, so that any BERP account holder (faculty members) of DIU will be able to find their individual publications in a particular year      Yearly Scopus indexed publications of DIU faculty will be made available in this module, so that any BERP account holder (faculty members) of DIU will be able to find their individual publications in a particular year.
     """,
-
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
-
-    # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml
-    # for the full list
-    'category': 'Uncategorized',
-    'version': '0.1',
-
-    # any module necessary for this one to work correctly
-    'depends': ['base'],
-
-    # always loaded
+    'version': '13.0.1.0',
+    'author': 'Nayeem Islam',
+    'company': 'Daffodil Software Limited',
+    'website': 'https://daffodilsoft.com/',
+    'category': 'Tools',
+    'sequence': 1,
+    'depends': ['base', 'contacts'],
     'data': [
-        # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/menus.xml',
-        'views/dor_policy_view.xml',
+        ## Security
+        'security/dor_security.xml',
+        'security/ir.model.access.csv',
+
+        ## View
         'views/publication_trend_view.xml',
+        'views/dor_policy_view.xml',
+        'views/menus.xml',
     ],
-    # only loaded in demonstration mode
-    'demo': [
-        'demo/demo.xml',
-    ],
+    'demo': [],
+    'installable': True,
+    'auto_install': False,
+    'application': True,
+    'icon': "/daffodil_dor_repository/static/description/icon.png",
+    "images": ["/static/description/banner.png"],
+    "license": "OPL-1",
+    "price": 0,
+    "currency": "EUR",
 }

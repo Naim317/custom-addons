@@ -3,11 +3,10 @@
     <data>
 
         <!-- Top Menu -->
-        <menuitem name="DoR Repository"
+        <menuitem name="My DoR Repo"
             id="menu_action_dor_repository"
             web_icon="daffodil_dor_repository,static/src/img/icon.png"
             sequence="1" />
-
 
         <!-- Master Data -->
         <menuitem name="Publications"

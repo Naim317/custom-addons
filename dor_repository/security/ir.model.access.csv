@@ -1,3 +1,7 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_dor_repository_dor_policy,dor_repository.dor_policy,model_dor_policy,base.group_user,1,1,1,1
-access_dor_repository_publication_trend,dor_repository.publication_trend,model_publication_trend,base.group_user,1,1,1,1
+
+access_dor_publication_trend_user,publication_trend,model_publication_trend,dor_repository.group_dor_user,1,0,0,0
+access_dor_publication_trend_manager,publication_trend,model_publication_trend,dor_repository.group_dor_manager,1,1,1,1
+
+access_dor_dor_policy_trend_user,dor_policy,model_dor_policy,dor_repository.group_dor_user,1,0,0,0
+access_dor_policy_trend_manager,dor_policy,model_dor_policy,dor_repository.group_dor_manager,1,1,1,1
