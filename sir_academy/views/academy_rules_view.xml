@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="academy_rules_search_view" model="ir.ui.view">
+            <field name="name">academy.rules.search.view</field>
+            <field name="model">academy.rules</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="attachment"/>
+                </search>
+            </field>
+        </record>
+        <!-- Tree View -->
+        <record id="academy_rules_tree_view" model="ir.ui.view">
+            <field name="name">academy.rules.tree.view</field>
+            <field name="model">academy.rules</field>
+            <field name="arch" type="xml">
+                <tree string="Academic Rules and Regulations">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <!-- Form View -->
+        <record id="academy_rules_form_view" model="ir.ui.view">
+            <field name="name">academy_rules.form.view</field>
+            <field name="model">academy_rules</field>
+            <field name="arch" type="xml">
+                <form string="Academic Rules and Regulations">
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                        <field name="attachment" widget='pdf_viewer' />
+                    </group>
+                </form>
+            </field>
+        </record>
+        <!-- Act Window & Menu Configuration -->
+        <record id="academy_rules_policy_view" model="ir.actions.act_window">
+            <field name="name">Academic Rules and Regulations</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">academy_rules</field>
+            <field name="domain">[]</field>
+            <!-- <field name="view_type">form</field> -->
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="academy_rules_tree_view"/>
+        </record>
+    </data>
+</odoo>
+

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': 'DoR Repository',
+    'name': 'Sir Academy',
     'summary': """All Scopus Publication of DIU""",
     'description': """
 DoR Repository
@@ -16,19 +16,19 @@ Yearly Scopus indexed publications of DIU faculty will be made available in this
     'depends': ['base', 'contacts'],
     'data': [
         ## Security
-        'security/dor_security.xml',
+        'security/academy_security.xml',
         'security/ir.model.access.csv',
 
         ## View
-        'views/publication_trend_view.xml',
-        'views/dor_policy_view.xml',
+        'views/academy_main_view.xml',
+        'views/academy_rules_view.xml',
         'views/menus.xml',
     ],
     'demo': [],
     'installable': True,
     'auto_install': False,
     'application': True,
-    'icon': "/dor_repository/static/description/icon.png",
+    'icon': "/sir_academy/static/src/img/sir.JPG",
     "images": ["/static/description/banner.png"],
     "license": "OPL-1",
     "price": 0,

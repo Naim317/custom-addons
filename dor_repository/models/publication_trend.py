@@ -14,7 +14,7 @@ class PublicationTrend(models.Model):
 
     name = fields.Char(string='Title', required=True)
     abstract = fields.Html(string='Abstract', sanitize=True, strip_style=False)
-    keywords = fields.Char(string='Keywords')
+    keywords = fields.Date(string='Keywords')
     author_ids = fields.Many2many('res.partner', string='Co-Authors')
     first_author = fields.Char(string='First Author')
     researchers = fields.Text(string='Researcher Name with Designation')
