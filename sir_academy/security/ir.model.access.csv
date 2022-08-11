@@ -1,9 +1,7 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 
-access_sir_academy_main_user,academy_main,model_academy_main,sir_academy.group_academy_user,1,0,0,0
-access_sir_academy_main_moderator,academy_main,academy_main_trend,sir_academy.group_academy_moderator,1,1,1,0
-access_sir_academy_main_manager,academy_main,model_academy_main,sir_academy.group_academy_manager,1,1,1,1
+access_dor_academy_main_user,academy_main,model_academy_main,sir_academy.group_dor_user,1,0,0,0
+access_dor_academy_main_manager,academy_main,model_academy_main,sir_academy.group_dor_manager,1,1,1,1
 
-access_sir_academy_rules_trend_user,academy_rules,model_academy_rules,sir_academy.group_academy_user,1,0,0,0
-access_sir_academy_rules_trend_moderator,academy_rules,model_academy_rules,sir_academy.group_academy_moderator,1,1,1,0
-access_sir_rules_trend_manager,academy_rules,model_academy_rules,sir_academy.group_academy_manager,1,1,1,1
+access_dor_academy_rules_trend_user,academy_rules,model_academy_rules,sir_academy.group_dor_user,1,0,0,0
+access_dor_academy_rules_manager,academy_rules,model_academy_rules,sir_academy.group_dor_manager,1,1,1,1

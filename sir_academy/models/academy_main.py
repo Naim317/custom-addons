@@ -25,14 +25,7 @@ class AcademyMain(models.Model):
     admission_year = fields.Date(string='Admission Year', required=True)
     major_subject = fields.Char(string='Major Subject')
     number_of_awards = fields.Char(string='Number of Awards')
-    teacher_remarks = fields.Char(
-        [
-            ('positive', 'Positive'),
-            ('negative', 'Negative')
-        ],
-        string='Teacher Remarks',
-        default=''
-    )
+
     regular_student = fields.Selection(
         [
             ('yes', 'Yes'),
@@ -41,12 +34,20 @@ class AcademyMain(models.Model):
         string='Regular Student',
         default=''
     )
+    teacher_remarks = fields.Char(
+        [
+            ('positive', 'Positive'),
+            ('negative', 'Negative')
+        ],
+        string='Teacher Remarks',
+        default=''
+    )
     university = fields.Selection(
         [
             ('diu', 'DIU'),
             ('outside_diu', 'Outside-DIU')
         ],
-        string='Indexed',
+        string='University',
         default='diu'
     )
     fees = fields.Char(string='Fees')
