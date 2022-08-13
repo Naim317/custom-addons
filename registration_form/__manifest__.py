@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': 'DoR Repository',
+    'name': 'Registration Form',
     'summary': """All Scopus Publication of DIU""",
     'description': """
 DoR Repository
@@ -20,15 +20,15 @@ Yearly Scopus indexed publications of DIU faculty will be made available in this
         'security/ir.model.access.csv',
 
         ## View
-        'views/publication_trend_view.xml',
-        'views/dor_policy_view.xml',
+        'views/registration_form_view.xml',
+        'views/registration_policy_view.xml',
         'views/menus.xml',
     ],
     'demo': [],
     'installable': True,
     'auto_install': False,
     'application': True,
-    'icon': "/dor_repository/static/description/icon.png",
+    'icon': "/registration_form/static/src/img/sir.JPG",
     "images": ["/static/description/banner.png"],
     "license": "OPL-1",
     "price": 0,

@@ -5,11 +5,10 @@ import math
 import re
 
 
-class AcademyRules(models.Model):
-    _name = 'academy.rules'
-    _description = 'Academy rules and regulations'
-    _order = 'name asc, name'
+class RegistrationPolicy(models.Model):
+    _name = 'registration.policy'
+    _description = 'Registration Policy'
 
-    name = fields.Char('Rules Title', required=True)
+    name = fields.Char('Policy Title', required=True)
     description = fields.Html(string='Description', sanitize=True, strip_style=False)
     attachment = fields.Binary('Attachment')

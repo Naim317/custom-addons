@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_registration_form_user,registration_form,model_registration_form,registration_form.group_dor_user,1,0,0,0
+access_registration_form_manager,registration_form,model_registration_form,registration_form.group_dor_manager,1,1,1,1
+
+access_registration_policy_user,registration_policy,model_registration_form,registration_form.group_dor_user,1,0,0,0
+access_registration_policy_manager,registration_policy,model_registration_form,registration_form.group_dor_manager,1,1,1,1
+

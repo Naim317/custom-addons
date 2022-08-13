@@ -34,7 +34,7 @@ class AcademyMain(models.Model):
         string='Regular Student',
         default=''
     )
-    teacher_remarks = fields.Char(
+    teacher_remarks = fields.Selection(
         [
             ('positive', 'Positive'),
             ('negative', 'Negative')

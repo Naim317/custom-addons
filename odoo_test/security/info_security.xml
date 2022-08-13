@@ -2,19 +2,19 @@
 <odoo>
 
     <!-- User Group -->
-    <record id="category_academy_security" model="ir.module.category">
-        <field name="name">Sir Academy</field>
+    <record id="category_info_security" model="ir.module.category">
+        <field name="name">Portfolio Website</field>
     </record>
 
-    <record id="group_sir_user" model="res.groups">
+    <record id="group_info_user" model="res.groups">
         <field name="name">User</field>
-        <field name="category_id" ref="category_academy_security" />
+        <field name="category_id" ref="category_info_security" />
     </record>
 
-    <record id="group_sir_manager" model="res.groups">
+    <record id="group_info_manager" model="res.groups">
         <field name="name">Manager</field>
-        <field name="implied_ids" eval="[(3, ref('group_sir_user'))]" />
-        <field name="category_id" ref="category_academy_security" />
+        <field name="implied_ids" eval="[(3, ref('group_info_user'))]" />
+        <field name="category_id" ref="category_info_security" />
         <field name="users" eval="[(4, ref('base.user_root'))]"/>
     </record>
 

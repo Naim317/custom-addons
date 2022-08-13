@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <record id="academy_rules_search_view" model="ir.ui.view">
-            <field name="name">academy.rules.search.view</field>
-            <field name="model">academy.rules</field>
+        <record id="registration_policy_search_view" model="ir.ui.view">
+            <field name="name">registration.policy.search.view</field>
+            <field name="model">registration.policy</field>
             <field name="arch" type="xml">
                 <search>
                     <field name="name"/>
@@ -13,21 +13,21 @@
             </field>
         </record>
         <!-- Tree View -->
-        <record id="academy_rules_tree_view" model="ir.ui.view">
-            <field name="name">academy.rules.tree.view</field>
-            <field name="model">academy.rules</field>
+        <record id="registration_policy_tree_view" model="ir.ui.view">
+            <field name="name">registration.policy.tree.view</field>
+            <field name="model">registration.policy</field>
             <field name="arch" type="xml">
-                <tree string="Academic Rules and Regulations">
+                <tree string="Research &amp; SDGs Policy">
                     <field name="name"/>
                 </tree>
             </field>
         </record>
         <!-- Form View -->
-        <record id="academy_rules_form_view" model="ir.ui.view">
-            <field name="name">academy.rules.form.view</field>
-            <field name="model">academy.rules</field>
+        <record id="registration_policy_form_view" model="ir.ui.view">
+            <field name="name">registration.policy.form.view</field>
+            <field name="model">registration.policy</field>
             <field name="arch" type="xml">
-                <form string="Academic Rules and Regulations">
+                <form string="Research &amp; SDGs Policy">
                     <group>
                         <field name="name"/>
                         <field name="description"/>
@@ -37,14 +37,14 @@
             </field>
         </record>
         <!-- Act Window & Menu Configuration -->
-        <record id="academy_rules_policy_view" model="ir.actions.act_window">
-            <field name="name">Academic Rules and Regulations</field>
+        <record id="action_registration_policy_view" model="ir.actions.act_window">
+            <field name="name">Research &amp; SDGs Policy</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">academy.rules</field>
+            <field name="res_model">registration.policy</field>
             <field name="domain">[]</field>
             <!-- <field name="view_type">form</field> -->
             <field name="view_mode">tree,form</field>
-            <field name="view_id" ref="academy_rules_tree_view"/>
+            <field name="view_id" ref="registration_policy_tree_view"/>
         </record>
     </data>
 </odoo>

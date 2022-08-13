@@ -5,11 +5,11 @@ import math
 import re
 
 
-class AcademyRules(models.Model):
-    _name = 'academy.rules'
-    _description = 'Academy rules and regulations'
-    _order = 'name asc, name'
+class CompanyInfo(models.Model):
+    _name = 'company.info'
+    _description = 'Company Info'
 
-    name = fields.Char('Rules Title', required=True)
+    name = fields.Char('Company Name', required=True)
+    region = fields.Char('Company Region', required=True)
     description = fields.Html(string='Description', sanitize=True, strip_style=False)
     attachment = fields.Binary('Attachment')

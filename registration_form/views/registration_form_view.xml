@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Search Filter -->
+        <record id="registration_form_search_view" model="ir.ui.view">
+            <field name="name">registration.form.search.view</field>
+            <field name="model">registration.form</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+
+
+        <!-- Tree View -->
+        <record id="registration_form_tree_view" model="ir.ui.view">
+            <field name="name">registration.form.tree.view</field>
+            <field name="model">registration.form</field>
+            <field name="arch" type="xml">
+                <tree string="Publication Trends">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- Form View -->
+        <record id="registration_form_form_view" model="ir.ui.view">
+            <field name="name">registration.form.form.view</field>
+            <field name="model">registration.form</field>
+            <field name="arch" type="xml">
+                <form string="Publication Trend">
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Act Window & Menu Configuration -->
+        <record id="action_registration_form_view" model="ir.actions.act_window">
+            <field name="name">Registration Form</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">registration.form</field>
+            <field name="domain">[]</field>
+            <!-- <field name="view_type">form</field> -->
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="registration_form_tree_view"/>
+        </record>
+
+    </data>
+</odoo>
