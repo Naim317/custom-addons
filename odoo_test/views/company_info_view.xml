@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Search Filter -->
+        <record id="company_info_search_view" model="ir.ui.view">
+            <field name="name">company.info.search.view</field>
+            <field name="model">company.info</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="region"/>
+                </search>
+            </field>
+        </record>
+
+
+        <!-- Tree View -->
+        <record id="company_info_tree_view" model="ir.ui.view">
+            <field name="name">company.info.tree.view</field>
+            <field name="model">company.info</field>
+            <field name="arch" type="xml">
+                <tree string="Company Information">
+                    <field name="name"/>
+                    <field name="region"/>
+                    <field name="description"/>
+                    <field name="attachment"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- Form View -->
+        <record id="company_info_form_view" model="ir.ui.view">
+            <field name="name">company.info.form.view</field>
+            <field name="model">company.info</field>
+            <field name="arch" type="xml">
+                <form string="Company Information">
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="region"/>
+                        </group>
+                        <group>
+                            <field name="description"/>
+                            <field name="attachment"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Act Window & Menu Configuration -->
+        <record id="action_company_info_view" model="ir.actions.act_window">
+            <field name="name">Company Info</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">company.info</field>
+            <field name="domain">[]</field>
+            <!-- <field name="view_type">form</field> -->
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="company_info_tree_view"/>
+        </record>
+
+    </data>
+</odoo>
