@@ -52,7 +52,7 @@
 
         <!-- Act Window & Menu Configuration -->
         <record id="action_company_info_view" model="ir.actions.act_window">
-            <field name="name">Company Info</field>
+            <field name="name">Company Information</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">company.info</field>
             <field name="domain">[]</field>

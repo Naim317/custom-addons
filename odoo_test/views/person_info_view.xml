@@ -30,9 +30,15 @@
             <field name="arch" type="xml">
                 <form string="Person Information">
                     <group>
-                        <field name="name"/>
-                        <field name="email"/>
-                        <field name="message"/>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="email"/>
+                        </group>
+                        <group>
+                            <field name="message"/>
+                        </group>
                     </group>
                 </form>
             </field>
