@@ -1,35 +1,36 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "fgs_event",
-
-    'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
-
+    'name': 'Faculty of GS Events',
+    'summary': """This is a demo project for practice purpose""",
     'description': """
-        Long description of module's purpose
+Faculty of GS Events
+==============
+Yearly Scopus indexed publications of DIU faculty will be made available in this module, so that any BERP account holder (faculty members) of DIU will be able to find their individual publications in a particular year      Yearly Scopus indexed publications of DIU faculty will be made available in this module, so that any BERP account holder (faculty members) of DIU will be able to find their individual publications in a particular year.
     """,
-
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
-
-    # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml
-    # for the full list
-    'category': 'Uncategorized',
-    'version': '0.1',
-
-    # any module necessary for this one to work correctly
-    'depends': ['base'],
-
-    # always loaded
+    'version': '13.0.1.0',
+    'author': 'Md. Jannat-UL-Naim',
+    'company': 'Daffodil Software Limited',
+    'website': 'https://daffodilsoft.com/',
+    'category': 'Tools',
+    'sequence': 1,
+    'depends': ['base', 'contacts'],
     'data': [
-        # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        ## Security
+        'security/event_security.xml',
+        'security/ir.model.access.csv',
+
+        ## View
+        'views/event_details_view.xml',
+        'views/event_participants_view.xml',
+        'views/menu.xml',
     ],
-    # only loaded in demonstration mode
-    'demo': [
-        'demo/demo.xml',
-    ],
+    'demo': [],
+    'installable': True,
+    'auto_install': False,
+    'application': True,
+    'icon': "/fgs_event/static/description/icon.png",
+    "images": ["/static/description/banner.png"],
+    "license": "OPL-1",
+    "price": 0,
+    "currency": "USD",
 }
