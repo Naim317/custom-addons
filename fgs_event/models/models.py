@@ -3,9 +3,9 @@
 # from odoo import models, fields, api
 
 
-# class registration_form(models.Model):
-#     _name = 'registration_form.registration_form'
-#     _description = 'registration_form.registration_form'
+# class fgs_event(models.Model):
+#     _name = 'fgs_event.fgs_event'
+#     _description = 'fgs_event.fgs_event'
 
 #     name = fields.Char()
 #     value = fields.Integer()
