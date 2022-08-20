@@ -1,9 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-
-access_person_info_user,person_info,model_person_info,odoo_test.group_info_user,1,0,0,0
-access_person_info_user,person_info,model_person_info,odoo_test.group_info_employee,1,1,1,0
-access_person_info_manager,person_info,model_person_info,odoo_test.group_info_manager,1,1,1,1
-
-access_company_info_user,company_info,model_company_info,odoo_test.group_info_user,1,0,0,0
-access_company_info_user,company_info,model_company_info,odoo_test.group_info_employee,1,1,1,0
-access_company_info_manager,company_info,model_company_info,odoo_test.group_info_manager,1,1,1,1

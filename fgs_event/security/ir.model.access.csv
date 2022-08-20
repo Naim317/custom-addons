@@ -1,7 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-
-access_event_details_user,event_details,model_event_details,fgs_event.group_event_user,1,0,0,0
-access_event_details_manager,event_details,model_event_details,fgs_event.group_event_manager,1,1,1,1
-
-access_event_participants_user,event_participants,model_event_participants,fgs_event.group_event_user,1,0,0,0
-access_event_participants_manager,event_participants,model_event_participants,fgs_event.group_event_manager,1,1,1,1

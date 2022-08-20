@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <menuitem sequence="1" name="SpiralWorld Summit" id="spiralworld_summit_menu_root" web_icon="spiralworld_summit,static/description/icon.png"/>
+        <menuitem sequence="2" name="Summit" id="spiralworld_summit_list" parent="spiralworld_summit.spiralworld_summit_menu_root" action="open_view_spiral_world_summit_tree"/>
+    </data>
+</odoo>

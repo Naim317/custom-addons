@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="spiralworld_meeting_send_invitation" model="mail.template">
+            <field name="name">Spiralworld Meeting Call Invitation</field>
+            <field name="email_from">${user.email|safe}</field>
+            <field name="email_to">${object.user_id.email|safe}</field>
+            <field name="partner_to">${object.get_partner_ids()}</field>
+            <field name="subject">Invitation to participate in the B2B Matchmaking of “Bangladesh Trade &amp; Investment Summit 2021”.
+            </field>
+            <field name="model_id" ref="spiralworld_summit.model_spiral_world_summit_meeting"/>
+            <field name="lang">${object.user_id.lang}</field>
+            <field name="body_html" type="html">
+                <div style="padding:0px;margin:auto;background: #FFFFFF repeat top /100%;color:#777777">
+                    % set call_date = format_datetime(object.date, tz=(object.user_id.tz or "UTC"),
+                    dt_format=(object.user_id.lang.date_format))
+                    <p>Dear Participant,</p>
+                    <br/>
+                    <p>
+                        <b>Greetings from Dhaka Chamber of Commerce &amp; Industry (DCCI)</b>
+                    </p>
+                    <br/>
+                    <p>Please refer to your registration to participate in the B2B session of
+                        <b>‘Bangladesh &amp; Investment Summit 2021’.</b>
+                    </p>
+                    <br/>
+                    <p>We are delighted to inform you that the
+                        <b>B2B session of your company will be held as per the following details:</b>
+                    </p>
+                    <br/>
+                    <table style="border: none;width:433.25pt;margin-left:4.15pt;background:white;border-collapse: collapse;">
+                        <tbody>
+                            <tr>
+                                <td style="width: 187.1pt;border-color: currentcolor windowtext windowtext;border-style: solid solid;border-width: medium 1pt 1pt;border-image: none 100% / 1 / 0 stretch;padding: 0in 5.4pt;height: 13.8pt;vertical-align: bottom;">
+                                    <p style='margin-top:0in;margin-right:0in;margin-bottom:.0001pt;margin-left:0in;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:  justify;'>
+                                        <span style='font-family:"Candara","sans-serif";color:black;'>Title</span>
+                                    </p>
+                                </td>
+                                <td style="width: 246.15pt;border-color: currentcolor windowtext windowtext currentcolor;border-style: solid solid;border-width: medium 1pt 1pt medium;padding: 0in 5.4pt;height: 13.8pt;vertical-align: bottom;">
+                                    <p style='margin-top:0in;margin-right:0in;margin-bottom:.0001pt;margin-left:0in;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:  justify;'>
+                                        <span style='font-family:"Candara","sans-serif";color:black;'> Information </span>
+                                    </p>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="width: 187.1pt;border: 1pt solid windowtext;padding: 0in 5.4pt;height: 13.8pt;vertical-align: bottom;">
+                                    <p style='margin-top:0in;margin-right:0in;margin-bottom:.0001pt;margin-left:0in;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:  justify;'>
+                                        <span style='font-family:"Candara","sans-serif";color:black;'>B2B Link</span>
+                                    </p>
+                                </td>
+
+                                <td style="width: 246.15pt;border-color: currentcolor windowtext windowtext currentcolor;border-style: none solid solid none;border-width: medium 1pt 1pt medium;padding: 0in 5.4pt;height: 13.8pt;vertical-align: bottom;">
+                                    <p style='margin-top:0in;margin-right:0in;margin-bottom:.0001pt;margin-left:0in;line-height:12.65pt;font-size:15px;font-family:"Calibri","sans-serif";text-align:  justify;background:white;'>
+                                        <a href="${object.meeting_link}">
+                                            <span style='font-family:"Candara","sans-serif";'>${object.meeting_link}
+                                            </span>
+                                        </a>
+                                    </p>
+                                </td>
+                            </tr>
+                            <!--        <tr>-->
+                            <!--            <td style="width: 187.1pt;border-color: currentcolor windowtext windowtext;border-style: none solid solid;border-width: medium 1pt 1pt;border-image: none 100% / 1 / 0 stretch;padding: 0in 5.4pt;height: 13.8pt;vertical-align: bottom;">-->
+                            <!--                <p style='margin-top:0in;margin-right:0in;margin-bottom:.0001pt;margin-left:0in;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:  justify;'><span style='font-family:"Candara","sans-serif";color:black;'>Meeting Password</span></p>-->
+                            <!--            </td>-->
+                            <!--            <td style="width: 246.15pt;border-color: currentcolor windowtext windowtext currentcolor;border-style: none solid solid none;border-width: medium 1pt 1pt medium;padding: 0in 5.4pt;height: 13.8pt;vertical-align: bottom;">-->
+                            <!--                <p style='margin-top:0in;margin-right:0in;margin-bottom:.0001pt;margin-left:0in;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:  justify;'><span style='font-family:"Candara","sans-serif";color:black;'>${object.password}</span></p>-->
+                            <!--            </td>-->
+                            <!--        </tr>-->
+                            <!--        <tr>-->
+                            <!--            <td style="width: 187.1pt;border-color: currentcolor windowtext windowtext;border-style: none solid solid;border-width: medium 1pt 1pt;border-image: none 100% / 1 / 0 stretch;padding: 0in 5.4pt;height: 13.8pt;vertical-align: bottom;">-->
+                            <!--                <p style='margin-top:0in;margin-right:0in;margin-bottom:.0001pt;margin-left:0in;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:  justify;'><span style='font-family:"Candara","sans-serif";color:black;'>Summit Login site</span></p>-->
+                            <!--            </td>-->
+                            <!--            <td style="width: 246.15pt;border-color: currentcolor windowtext windowtext currentcolor;border-style: none solid solid none;border-width: medium 1pt 1pt medium;padding: 0in 5.4pt;height: 13.8pt;vertical-align: bottom;">-->
+                            <!--                <p style='margin-top:0in;margin-right:0in;margin-bottom:.0001pt;margin-left:0in;line-height:12.65pt;font-size:15px;font-family:"Calibri","sans-serif";text-align:  justify;background:white;'><a href="https://summit.dhakachamber.com/login"><span style='font-family:"Candara","sans-serif";'>https://summit.dhakachamber.com/login</span></a></p>-->
+                            <!--            </td>-->
+                            <!--        </tr>-->
+
+
+                            <tr>
+                                <td style="width: 187.1pt;border-color: currentcolor windowtext windowtext;border-style: none solid solid;border-width: medium 1pt 1pt;border-image: none 100% / 1 / 0 stretch;padding: 0in 5.4pt;height: 13.8pt;vertical-align: bottom;">
+                                    <p style='margin-top:0in;margin-right:0in;margin-bottom:.0001pt;margin-left:0in;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:  justify;'>
+                                        <span style='font-family:"Candara","sans-serif";color:black;'>Date of the B2B
+                                            session
+                                        </span>
+                                    </p>
+                                </td>
+                                <td style="width: 246.15pt;border-color: currentcolor windowtext windowtext currentcolor;border-style: none solid solid none;border-width: medium 1pt 1pt medium;padding: 0in 5.4pt;height: 13.8pt;vertical-align: bottom;">
+                                    <p style='margin-top:0in;margin-right:0in;margin-bottom:.0001pt;margin-left:0in;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:  justify;'>
+                                        <span style='font-family:"Candara","sans-serif";color:black;'>
+                                            ${object.start_date.strftime('%B %d, %Y')}
+                                        </span>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 187.1pt;border-color: currentcolor windowtext windowtext;border-style: none solid solid;border-width: medium 1pt 1pt;border-image: none 100% / 1 / 0 stretch;padding: 0in 5.4pt;height: 14.5pt;vertical-align: bottom;">
+                                    <p style='margin-top:0in;margin-right:0in;margin-bottom:.0001pt;margin-left:0in;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:  justify;'>
+                                        <span style='font-family:"Candara","sans-serif";color:black;'>Start Time</span>
+                                    </p>
+                                </td>
+                                <td style="width: 246.15pt;border-color: currentcolor windowtext windowtext currentcolor;border-style: none solid solid none;border-width: medium 1pt 1pt medium;padding: 0in 5.4pt;height: 14.5pt;vertical-align: bottom;">
+                                    <p style='margin-top:0in;margin-right:0in;margin-bottom:.0001pt;margin-left:0in;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:  justify;'>
+                                        <span style='font-family:"Candara","sans-serif";color:black;'>
+                                            ${object.get_display_time_tz().strftime('%H:%M')} hr. Bangladesh Standard
+                                            Time (GMT+6)
+                                        </span>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 187.1pt;border-color: currentcolor windowtext windowtext;border-style: none solid solid;border-width: medium 1pt 1pt;border-image: none 100% / 1 / 0 stretch;padding: 0in 5.4pt;height: 14.5pt;vertical-align: bottom;">
+                                    <p style='margin-top:0in;margin-right:0in;margin-bottom:.0001pt;margin-left:0in;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:  justify;'>
+                                        <span style='font-family:"Candara","sans-serif";color:black;'>End Time</span>
+                                    </p>
+                                </td>
+                                <td style="width: 246.15pt;border-color: currentcolor windowtext windowtext currentcolor;border-style: none solid solid none;border-width: medium 1pt 1pt medium;padding: 0in 5.4pt;height: 14.5pt;vertical-align: bottom;">
+                                    <p style='margin-top:0in;margin-right:0in;margin-bottom:.0001pt;margin-left:0in;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:  justify;'>
+                                        <span style='font-family:"Candara","sans-serif";color:black;'>
+                                            ${object.get_display_end_time_tz().strftime('%H:%M')} hr. Bangladesh
+                                            Standard Time (GMT+6)
+                                        </span>
+                                    </p>
+                                </td>
+                            </tr>
+                            % for expo in object.expo_zone_ids:
+                            <tr>
+                                <td style="width: 187.1pt;border-color: currentcolor windowtext windowtext;border-style: none solid solid;border-width: medium 1pt 1pt;border-image: none 100% / 1 / 0 stretch;padding: 0in 5.4pt;height: 14.5pt;vertical-align: bottom;">
+                                    <p style='margin-top:0in;margin-right:0in;margin-bottom:.0001pt;margin-left:0in;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:  justify;'>
+                                        <span style='font-family:"Candara","sans-serif";color:black;'>Company
+                                            (${expo.country_id.name})
+                                        </span>
+                                    </p>
+                                </td>
+                                <td style="width: 246.15pt;border-color: currentcolor windowtext windowtext currentcolor;border-style: none solid solid none;border-width: medium 1pt 1pt medium;padding: 0in 5.4pt;height: 14.5pt;vertical-align: bottom;">
+                                    <p style='margin-top:0in;margin-right:0in;margin-bottom:.0001pt;margin-left:0in;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:  justify;'>
+                                        <span style='font-family:"Candara","sans-serif";color:black;'>${expo.name},
+                                            (${expo.country_id.name})
+                                            <br/>
+                                            % for counselor in expo.user_ids:
+                                            <b>Login through summit website:</b>
+                                            <br/>
+                                            https://summit.dhakachamber.com/login
+                                            <br/>
+                                            Username: ${counselor.login}
+                                            <br/>
+                                            Password: DCCI123
+                                            % endfor
+                                        </span>
+                                    </p>
+                                </td>
+                            </tr>
+                            % endfor
+                            <tr>
+                                <td style="width: 187.1pt;border-color: currentcolor windowtext windowtext;border-style: none solid solid;border-width: medium 1pt 1pt;border-image: none 100% / 1 / 0 stretch;padding: 0in 5.4pt;height: 3.5pt;vertical-align: bottom;">
+                                    <p style='margin-top:0in;margin-right:0in;margin-bottom:.0001pt;margin-left:0in;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";text-align:  justify;'>
+                                        <span style='font-family:"Candara","sans-serif";color:black;'>DCCI
+                                            Representative
+                                        </span>
+                                    </p>
+                                </td>
+                                <td style="width: 246.15pt;border-color: currentcolor windowtext windowtext currentcolor;border-style: none solid solid none;border-width: medium 1pt 1pt medium;padding: 0in 5.4pt;height: 3.5pt;vertical-align: bottom;">
+                                    <p style='margin-top:0in;margin-right:0in;margin-bottom:.0001pt;margin-left:0in;line-height:normal;font-size:15px;font-family:"Calibri","sans-serif";'>
+                                        <span style='font-family:"Candara","sans-serif";color:black;'>
+                                            ${object.counselor_ids.name} (${object.counselor_ids.email})
+                                        </span>
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br/>
+                    <p>Please feel free to contact DCCI representative for any further clarification. You are cordially
+                        requested to join the B2B session in time as per above schedule.
+                    </p>
+                    <br/>
+                    <p>Thanking You</p>
+                    <br/>
+
+                    <p>Yours Sincerely,</p>
+                    <br/>
+                    <p>Bangladesh Trade &amp; Investment Summit</p>
+                    <br/>
+                    <img src="/spiralworld_summit/static/logo/summit.png" style="height:150px; width:250px;"/>
+
+
+                </div>
+            </field>
+        </record>
+
+    </data>
+</odoo>

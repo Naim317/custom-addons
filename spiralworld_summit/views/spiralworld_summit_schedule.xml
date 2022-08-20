@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_spiral_world_summit_schedule_tree" model="ir.ui.view">
+            <field name="name">Schedule</field>
+            <field name="model">spiral.world.summit.schedule</field>
+            <field name="arch" type="xml">
+                <tree string="Schedule">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_spiral_world_summit_schedule_form" model="ir.ui.view">
+            <field name="name">Schedule</field>
+            <field name="model">spiral.world.summit.schedule</field>
+            <field name="arch" type="xml">
+                <form string="Meeting">
+                    <sheet>
+
+                        <group>
+                            <group>
+                                <field name="summit_id"/>
+                            </group>
+                            <group>
+                                <field name="meeting_id"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="expo_zone_ids" widget="many2many_tags" options="{'no_create_edit': True}"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="start_date"/>
+                            </group>
+                            <group>
+                                <field name="end_date"/>
+                            </group>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+
+        </record>
+
+
+        <record id="open_view_spiral_world_schedule_tree" model="ir.actions.act_window">
+            <field name="name">Schedule</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">spiral.world.summit.schedule</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No Record found!
+                </p>
+            </field>
+        </record>
+
+        <record id="open_view_spiral_world_summit_schedule_tree" model="ir.actions.act_window">
+            <field name="name">Schedule</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">spiral.world.summit.schedule</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No Record found!
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

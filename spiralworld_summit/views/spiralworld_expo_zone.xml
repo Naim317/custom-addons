@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_spiral_world_expo_zone_tree" model="ir.ui.view">
+            <field name="name">Expo Zone</field>
+            <field name="model">spiral.world.expo.zone</field>
+            <field name="arch" type="xml">
+                <tree string="Expo Zone">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="view_spiral_world_expo_zone_form" model="ir.ui.view">
+            <field name="name">Expo Zone</field>
+            <field name="model">spiral.world.expo.zone</field>
+            <field name="arch" type="xml">
+                <form string="Expo Zone">
+
+                    <sheet>
+                        <div class="oe_button_box" name="button_box" groups="base.group_user">
+
+                            <button class="oe_stat_button" icon="fa-users" help="Schedule" type="action" name="%(spiralworld_summit.open_view_spiral_world_expo_document_tree)d" >
+                                  Document
+                            </button>
+                        </div>
+                        <label for="summit_id" class="oe_edit_only"/>
+                        <h1>
+                            <field name="summit_id"/>
+                        </h1>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="address"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="phone"/>
+                            </group>
+                            <group>
+                                <field name="email"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="website"/>
+                            </group>
+                            <group>
+                                <field name="business_type"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="logo"  widget="image"/>
+                            </group>
+                            <group>
+                                <field name="stall_logo"  widget="image"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="company_type"/>
+                            </group>
+                            <group>
+                                <field name="social_media"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="country_id"/>
+                            </group>
+                            <group>
+                                <field name="video_link"/>
+                            </group>
+                        </group>
+
+                        <notebook>
+                            <page name="document" string="Documents Information">
+                                <field name="document_ids">
+                                    <tree string="Documents Information" editable="bottom">
+                                        <field name="name"/>
+                                        <field name="summit_id"/>
+                                        <field name="expo_zone_id"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page name="counselor" string="Counselor Information">
+                                <field name="user_ids">
+                                    <tree string="Contact Information" editable="bottom">
+                                        <field name="name"/>
+                                        <field name="login"/>
+                                        <field name="email"/>
+                                        <field name="password" password="True"/>
+                                        <field name="user_type"/>
+                                        <field name="phone"/>
+                                        <field name="summit_id"/>
+                                        <field name="expo_zone_id"/>
+                                        <field name="groups_id"/>
+                                        <field name="tz"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+
+        </record>
+
+
+        <record id="open_view_spiral_world_expo_tree" model="ir.actions.act_window">
+            <field name="name">Expo Zone</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">spiral.world.expo.zone</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No Record found!
+                </p>
+            </field>
+        </record>
+
+        <record id="open_view_spiral_world_summit_expo_tree" model="ir.actions.act_window">
+            <field name="name">Expo Zone</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">spiral.world.expo.zone</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No Record found!
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

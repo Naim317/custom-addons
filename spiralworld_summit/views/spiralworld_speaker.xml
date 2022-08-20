@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_spiral_world_expo_webinar_tree" model="ir.ui.view">
+            <field name="name">Expo Webinar</field>
+            <field name="model">spiral.world.expo.webinar</field>
+            <field name="arch" type="xml">
+                <tree string="expo_webinar" default_order='sequence'>
+                    <field name="sequence"/>
+                    <field name="name"/>
+                    <field name="code"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_spiral_world_expo_webinar_form" model="ir.ui.view">
+            <field name="name">Expo Webinar</field>
+            <field name="model">spiral.world.expo.webinar</field>
+            <field name="arch" type="xml">
+                <form string="expo_webinar">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="summit_id"/>
+                            </group>
+
+                        </group>
+                        <group>
+                            <group>
+                                <field name="sequence"/>
+                            </group>
+                        </group>
+
+                        <group>
+                            <group>
+                                <field name="start_date"/>
+                            </group>
+                            <group>
+                                <field name="end_date"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="code"/>
+                            </group>
+                            <group>
+                                <field name="banner" widget="image"/>
+                            </group>
+                        </group>
+
+
+
+                        <notebook>
+                            <page name="speaker" string="Speakers Information">
+                                <field name="speakers_ids">
+                                    <tree string="Speakers Information" default_order='sequence'>
+                                        <field name="sequence"/>
+                                        <field name="name"/>
+                                        <field name="code"/>
+                                        <field name="designation"/>
+                                        <field name="company"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+
+        </record>
+
+        <record id="open_view_spiral_world_expo_webinar_tree" model="ir.actions.act_window">
+            <field name="name">expo_webinar</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">spiral.world.expo.webinar</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No Record found!
+                </p>
+            </field>
+        </record>
+
+
+    </data>
+
+
+</odoo>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_spiral_world_webinar_link_tree" model="ir.ui.view">
+            <field name="name">Webinar Link</field>
+            <field name="model">spiral.world.webinar.link</field>
+            <field name="arch" type="xml">
+                <tree string="Webinar Link">
+                    <field name="summit_id"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_spiral_world_webinar_link_form" model="ir.ui.view">
+            <field name="name">Document</field>
+            <field name="model">spiral.world.webinar.link</field>
+            <field name="arch" type="xml">
+                <form string="Webinar Link">
+                    <sheet>
+                        <label for="summit_id" class="oe_edit_only"/>
+                        <group>
+                            <group>
+                                <field name="summit_id"/>
+                            </group>
+                            <group>
+                                <field name="webinar_id"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="banner" widget="image" height="80"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="start_date"/>
+                            </group>
+                            <group>
+                                <field name="detail"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="status"/>
+                            </group>
+                            <group>
+                                <field name="url" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+
+        </record>
+
+        <record id="view_spiral_world_webinar_link_filter" model="ir.ui.view">
+            <field name="name">Document</field>
+            <field name="model">spiral.world.webinar.link</field>
+            <field name="arch" type="xml">
+                <search string="Search Document">
+                    <field name="name" string="Webinar Link"
+                           filter_domain="['|',('name','ilike',self)]"/>
+                    <field name="summit_id"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="open_view_spiral_world_webinar_link_tree" model="ir.actions.act_window">
+            <field name="name">Document</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">spiral.world.webinar.link</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No Record found!
+                </p>
+            </field>
+        </record>
+
+
+    </data>
+
+
+</odoo>
