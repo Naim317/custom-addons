@@ -26,6 +26,7 @@
     'data': [
         # 'security/ir.model.access.csv',
 
+        'views/templates_my_meeting.xml',
         'views/templates_participating_details.xml',
         'views/templates_participating_institute.xml',
         'views/templates_sponsor.xml',

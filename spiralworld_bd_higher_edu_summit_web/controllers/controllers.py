@@ -61,6 +61,31 @@ class SpiralworldHigherEduSummitWeb(http.Controller):
         })
         return request.render("spiralworld_bd_higher_edu_summit_web.spiralworld_edu_master", values)
 
+    @http.route(['/my-meeting/<int:meeting_id>'], website=True, csrf=False, type='http', auth="public")
+    def sprialworld_summit_higher_edu_meeting(self, meeting_id=False, **kw):
+        puser = request.env.user
+        meetings = request.env['spiral.world.higher.meeting'].sudo().search([('id', '=', meeting_id)])
+        videocall_server_url = request.env['ir.config_parameter'].sudo().get_param(
+            'acs_jitsi_meet.video_call_server_url')
+        meeting_user = ""
+        if meetings:
+            for value in meetings.counselor_ids:
+                if value.id == puser.id and meetings.state == 'draft':
+                    meeting_user = "done"
+        values = {}
+        values.update({
+            'menu_action': "my_meeting",
+            'puser': puser,
+            'users': False,
+            'my_meeting': True,
+            'sponsor': True,
+            'meetings': meetings,
+            'meeting_user': meeting_user,
+            'server_name': videocall_server_url.split("//")[1],
+            'site_url': 'http://127.0.0.1:8069',
+        })
+        return request.render("spiralworld_bd_higher_edu_summit_web.spiralworld_edu_master", values)
+
     @http.route(['/chat'], type='http', auth="user", website=True, csrf=False, methods=['POST'])
     def sprialworld_higher_edu_chat(self, **kw):
         puser = request.env.user

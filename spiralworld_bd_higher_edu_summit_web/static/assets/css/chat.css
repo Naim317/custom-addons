@@ -65,6 +65,16 @@
         color: #fff;
         background-color: #5e37a6;
     }
+    .dateTimeDiv{
+        margin-top: -10px;
+    }
+    .dateTimeHead h4 {
+        padding: 11px 16px;
+        border-bottom: 2px solid #f4f7f6;
+        color: #fff;
+        background-color: #5e37a6;
+        border-radius: 5px;
+    }
 
     .chat .chat-header img {
         float: left;

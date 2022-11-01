@@ -51,7 +51,7 @@
                                    t-call="spiralworld_bd_higher_edu_summit_web.spiralworld_summit_speaker_detail"/>
 
                                 <!--                                b2b_meeting -->
-                                <t t-if="b2b" t-call="spiralworld_bd_higher_edu_summit_web.spiralworld_summit_b2b_meeting"/>
+                                <t t-if="my_meeting" t-call="spiralworld_bd_higher_edu_summit_web.spiralworld_summit_my_meeting"/>
                                 <!--                                myb2b-->
                                 <t t-if="my_b2b" t-call="spiralworld_bd_higher_edu_summit_web.spiralworld_summit_my_b2b_meeting"/>
                                 <!--                                country -->

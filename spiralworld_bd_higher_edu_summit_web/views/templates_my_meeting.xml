@@ -1,12 +1,7 @@
 <odoo>
     <data>
-        <template id="spiralworld_summit_b2b_meeting" name="SprialWorld Summit Suvenior">
-            <div class="row">
-                <div class="col-md-12">
-                    <a href="/b2b" class="btn btn-lg btn-success">All B2B</a>
-                    <a t-if="puser.id != 4" href="/my_b2b" class="btn btn-lg btn-success">My B2B</a>
-                </div>
-            </div>
+        <template id="spiralworld_summit_my_meeting" name="SprialWorld Summit Meeting">
+
             <div class="row">
                 <div class="col-md-12">
                     <h3 style="text-align: center; color: #0f9447;">B2B Match Making</h3>
@@ -14,7 +9,7 @@
             </div>
             <div class="row" style="text-align:center">
 
-                <div t-if="b2b_v" class="col-md-4" style="margin-top: 10px;" t-foreach="b2b_v" t-as="value">
+                <div t-if="b2b_v" class="col-md-4" style="margin-top: 10px;" t-foreach="meetings" t-as="value">
                     <div class="card border-success">
                         <div class="card-header pan_color">
                             <t t-esc="value.name"/>
