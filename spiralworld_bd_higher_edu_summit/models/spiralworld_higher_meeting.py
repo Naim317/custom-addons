@@ -68,6 +68,13 @@ class SpiralWorldSummitHigherMeeting(models.Model):
 
         return super(SpiralWorldSummitHigherMeeting, self).create(values)
 
+    def write(self, values):
+        if values.get('domain_url'):
+            values['meeting_link'] = values['domain_url'] + '/videocall/'+ self.video_call_id.meeting_code
+        if values.get('start_date'):
+            self.video_call_id.date = values['start_date']
+        return super(SpiralWorldSummitHigherMeeting, self).write(values)
+
     def action_draft(self):
         self.state = 'draft'
         self.video_call_id.state = 'draft'
@@ -85,16 +92,9 @@ class SpiralWorldSummitHigherMeeting(models.Model):
         self.state = 'cancel'
         self.video_call_id.state = 'cancel'
 
-    def write(self, values):
-        if values.get('domain_url'):
-            values['meeting_link'] = values['domain_url'] + '/videocall/'+ self.video_call_id.meeting_code
-        if values.get('start_date'):
-            self.video_call_id.date = values['start_date']
-        return super(SpiralWorldSummitHigherMeeting, self).write(values)
-
     def get_partner_ids(self):
         partner_ids = ''
-        for line in self.expo_zone_ids:
+        for line in self.edu_expo_zone_ids:
             for line_user in line.user_ids:
                 partner_ids = ',' + str(line_user.partner_id.id) + partner_ids
 
