@@ -1,0 +1,42 @@
+<odoo>
+    <data>
+        <template id="spiralworld_summit_speaker_detail" name="SprialWorld Summit Speaker">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 style="color: #0f9447;">Speakers</h3>
+                </div>
+            </div>
+            <t t-if="webinar_v" t-foreach="webinar_v" t-as="value">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h4 t-esc="value.code"></h4>
+                        <h6 t-field="value.with_context(tz='Asia/Dhaka').start_date"  t-options="{'date_only': 'true', 'format': 'long'}"></h6>
+                        <h6>Time: BST <span t-field="value.with_context(tz='Asia/Dhaka').start_date"  t-options="{'time_only': 'true', 'format': 'H:mm'}"></span> - <span t-field="value.with_context(tz='Asia/Dhaka').end_date"  t-options="{'time_only': 'true', 'format': 'H:mm'}"></span> hr</h6>
+                        <h5 t-esc="value.name"></h5>
+                    </div>
+                </div>
+
+                <div class="row" style="text-align:center">
+                    <div class="col-md-4" style="margin-top: 10px;" t-foreach="value.speakers_ids.sorted(key=lambda r: r.sequence)" t-as="speakers_value">
+                        <div class="card border-success">
+                            <div class="card-header border-success pan_color" t-esc="speakers_value.code"></div>
+                            <div class="card-body">
+                                <div class="image" style="display: inline-block; padding-left: .8rem;">
+                                    <img  t-if="speakers_value.logo" t-att-src="image_data_uri(speakers_value.logo)" t-att-alt="speakers_value.name"
+                                         style="height: auto; width: 8.1rem;border-radius: 50%"
+                                         class="img-circle elevation-2"/>
+                                </div>
+                            </div>
+                            <div class="card-footer  border-success">
+                                <b><t t-esc="speakers_value.name"/></b> <br/>
+                                <t t-esc="speakers_value.designation"/> <br/>
+                                <t t-esc="speakers_value.company"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr/>
+            </t>
+        </template>
+    </data>
+</odoo>

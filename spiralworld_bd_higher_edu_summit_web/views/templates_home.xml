@@ -1,0 +1,8 @@
+<odoo>
+    <data>
+        <template id="spiralworld_summit_home" name="SprialWorld Summit Home">
+            <t t-call="spiralworld_summit_web.spiralworld_summit_master"/>
+
+        </template>
+    </data>
+</odoo>

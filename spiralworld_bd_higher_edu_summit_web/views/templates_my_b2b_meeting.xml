@@ -1,0 +1,66 @@
+<odoo>
+    <data>
+        <template id="spiralworld_summit_my_b2b_meeting" name="SprialWorld Summit Suvenior">
+            <div class="row">
+                <div class="col-md-12">
+                    <a href="/b2b" class="btn btn-lg btn-success">All B2B</a>
+                    <a t-if="puser.id != 4" href="/my_b2b" class="btn btn-lg btn-success">My B2B</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 style="text-align: center; color: #0f9447;">My B2B Match Making</h3>
+                </div>
+            </div>
+            <div class="row" style="text-align:center">
+
+                <div t-if="b2b_v" class="col-md-4" style="margin-top: 10px;" t-foreach="b2b_v" t-as="value">
+                    <div class="card border-success">
+                        <div class="card-header pan_color">
+                            <t t-esc="value.name"/>
+                        </div>
+                        <div class="card-body">
+                            <div class="row" style="text-align:center">
+                                <div class="col-md-12">
+                                    <h6 t-field="value.with_context(tz='Asia/Dhaka').start_date"  t-options="{'date_only': 'true', 'format': 'long'}"></h6>
+                                    <h6>Time: BST <span t-field="value.with_context(tz='Asia/Dhaka').start_date"  t-options="{'time_only': 'true', 'format': 'H:mm'}"></span> - <span t-field="value.with_context(tz='Asia/Dhaka').end_date"  t-options="{'time_only': 'true', 'format': 'H:mm'}"></span> hrs hrs (GMT+6)</h6>
+                                </div>
+                            </div>
+                            <p></p>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="row" t-if="value.expo_zone_ids" t-foreach="value.expo_zone_ids"
+                                         t-as="value_expo_zone">
+
+                                        <div class="col-sm-12">
+                                            <div class="image" style="float:left;margin: 3px;">
+                                                <img t-if="value_expo_zone.country_id.logo" t-att-src="image_data_uri(value_expo_zone.country_id.logo)"
+                                                     t-att-alt="value_expo_zone.name"
+                                                     style="height: auto; width: 3.1rem;"
+                                                     class="img-circle elevation-2"/>
+                                            </div>
+                                            <div class="info"
+                                                 style="overflow: hidden;">
+                                                <a t-att-href="'/expo_zone/'+str(value_expo_zone.id)"
+                                                   style="display: block !important;" t-esc="value_expo_zone.name"></a>
+                                                <p t-esc="value_expo_zone.country_id.name"></p>
+                                            </div>
+                                            <hr t-if="value_expo_zone_index == 0"/>
+                                        </div>
+
+                                    </div>
+                                    <hr/>
+                                    <a class="btn pan_color" t-att-href="value.meeting_link"> <span class="fa fa-group mr-3"></span> Join Meeting </a>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </template>
+    </data>
+</odoo>

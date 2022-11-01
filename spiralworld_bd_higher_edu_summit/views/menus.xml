@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <menuitem sequence="1" name="SpiralWorld Higher Edu Summit" id="spiralworld_higher_edu_summit_menu_root" />
+        <menuitem sequence="2" name="Summit" id="spiralworld_higher_edu_summit_list" parent="spiralworld_bd_higher_edu_summit.spiralworld_higher_edu_summit_menu_root" action="open_view_spiral_world_higher_edu_tree"/>
+    </data>
+</odoo>

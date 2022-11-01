@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <template id="spiralworld_summit_schedule" name="SprialWorld Summit Suvenior">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <t t-if="schedule_v" t-raw="schedule_v.schedule_detail"/>
+
+                </div>
+            </div>
+
+        </template>
+    </data>
+</odoo>

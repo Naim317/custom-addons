@@ -1,0 +1,122 @@
+<odoo>
+    <data>
+        <template id="spiralworld_summit_speaker" name="SprialWorld Summit Speaker">
+            <hr/>
+
+            <div class="row"  style="text-align:center">
+                <div class="col-md-12">
+                    <h3 style="color: #0f9447;">Speakers</h3>
+                </div>
+            </div>
+            <div class="row" style="text-align:center">
+                <div class="col-md-4" style="margin-top: 10px;">
+                    <div class="card border-success">
+                        <div class="card-header  border-success pan_color">Special Guest</div>
+                        <div class="card-body">
+                            <div class="image" style="display: inline-block; padding-left: .8rem;">
+                                <img src="/spiralworld_summit_web/static/assets/images/1. Dr. A. K. Abdul Momen, MP, Hon_ble Minister, Ministry of Foreign Affairs, Government of the People_s Republic of Bangladesh.png"
+                                     style="height: auto; width: 8.1rem;border-radius: 50%"
+                                     class="img-circle elevation-2" alt="User Image"/>
+                            </div>
+                        </div>
+                        <div class="card-footer  border-success"><b>Dr. A. K. Abdul Momen, M.P.</b>
+                            <br/>
+                            Honourable Minister, Ministry of Foreign Affairs, Government of the People's Republic of
+                            Bangladesh
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" style="margin-top: 10px;">
+                    <div class="card border-success">
+                        <div class="card-header  border-success pan_color">Special Guest</div>
+                        <div class="card-body">
+                            <div class="image" style="display: inline-block; padding-left: .8rem;">
+                                <img src="/spiralworld_summit_web/static/assets/images/2. Mr. Tipu Munshi, MP, Hon_ble Minister, Ministry of Commerce, Government of the People_s Republic of Bangladesh.png"
+                                     style="height: auto; width: 8.1rem;border-radius: 50%"
+                                     class="img-circle elevation-2" alt="User Image"/>
+                            </div>
+                        </div>
+                        <div class="card-footer  border-success"><b>Mr. Tipu Munshi, M.P.</b>
+                            <br/>
+                            Honourable Minister, Ministry of Commerce, Government of the People's Republic of Bangladesh
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" style="margin-top: 10px;">
+                    <div class="card border-success">
+                        <div class="card-header border-success pan_color">Special Guest</div>
+                        <div class="card-body">
+                            <div class="image" style="display: inline-block; padding-left: .8rem;">
+                                <img src="/spiralworld_summit_web/static/assets/images/3. Mr. Salman Fazlur Rahman, MP, Hon_ble Private Industry _ Investment Adviser to the Prime Minister, Government of Bangladesh.png"
+                                     style="height: auto; width: 8.1rem;border-radius: 50%"
+                                     class="img-circle elevation-2" alt="User Image"/>
+                            </div>
+                        </div>
+                        <div class="card-footer  border-success"><b>Mr. Salman Fazlur Rahman, M.P.</b>
+                            <br/>
+                            Private Sector Industry and Investment Adviser
+to the Honourabe Prime Minister, Government of the People’s Republic of Bangladesh
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" style="margin-top: 10px;">
+                    <div class="card border-success">
+                        <div class="card-header  border-success pan_color">Speaker</div>
+                        <div class="card-body">
+                            <div class="image" style="display: inline-block; padding-left: .8rem;">
+                                <img src="/spiralworld_summit_web/static/assets/images/4. Mr. Tapan Kanti Ghosh, Secretary, Ministry of Commerce, Government of Bangladesh.png"
+                                     style="height: auto; width: 8.1rem;border-radius: 50%"
+                                     class="img-circle elevation-2" alt="User Image"/>
+                            </div>
+                        </div>
+                        <div class="card-footer  border-success"><b>Mr. Tapan Kanti Ghosh</b>
+                            <br/>
+                            Secretary, Ministry of Commerce, Government of the People's Republic of Bangladesh
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" style="margin-top: 10px;">
+                    <div class="card border-success">
+                        <div class="card-header  border-success pan_color">Guest of Honour</div>
+                        <div class="card-body">
+                            <div class="image" style="display: inline-block; padding-left: .8rem;">
+                                <img src="/spiralworld_summit_web/static/assets/images/5. Mr. Md. Jashim Uddin, President, FBCCI.png"
+                                     style="height: auto; width: 8.1rem;border-radius: 50%"
+                                     class="img-circle elevation-2" alt="User Image"/>
+                            </div>
+                        </div>
+                        <div class="card-footer  border-success"><b>Mr. Md. Jashim Uddin</b>
+                            <br/>
+                            President, The Federation of Bangladesh Chambers of Commerce and Industry
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" style="margin-top: 10px;">
+                    <div class="card border-success">
+                        <div class="card-header  border-success pan_color">Welcome Remarks</div>
+                        <div class="card-body">
+                            <div class="image" style="display: inline-block; padding-left: .8rem;">
+                                <img src="/spiralworld_summit_web/static/assets/images/6. Mr. Rizwan Rahman, President, Dhaka Chamber of Commerce _ Industry.png"
+                                     style="height: auto; width: 8.1rem;border-radius: 50%"
+                                     class="img-circle elevation-2" alt="User Image"/>
+                            </div>
+                        </div>
+                        <div class="card-footer  border-success"><b>Mr. Rizwan Rahman</b>
+                            <br/>
+                            President, Dhaka Chamber of Commerce &amp; Industry
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p></p>
+            <div class="row" style="text-align:center">
+                <div class="col-md-12">
+                    <a type="button" href="/speaker" class="btn btn-success pull-right">Read More
+                    </a>
+                </div>
+            </div>
+        </template>
+    </data>
+</odoo>

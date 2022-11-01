@@ -1,0 +1,49 @@
+<odoo>
+    <data>
+        <template id="spiralworld_summit_supplementary" name="SprialWorld Summit Suvenior">
+            <div class="row" style="text-align:center">
+                <div class="col-md-12">
+                    <h3 style="color: #0f9447;">Photo Gallery</h3>
+                </div>
+            </div>
+            <div class="row" style="text-align:center">
+              <t t-foreach="photo" t-as="photo_value">
+                  <div class="col-md-6" style="margin-top: 10px;">
+                    <img class="img-fluid" style="height: 320px;" t-att-src="image_data_uri(photo_value.photo)"/>
+                  </div>
+              </t>
+            </div>
+            <hr/>
+            <div class="row" style="text-align:center">
+                <div class="col-md-12">
+                    <h3 style="color: #0f9447;">News</h3>
+                </div>
+            </div>
+            <div class="row" style="text-align:center">
+              <t t-foreach="news" t-as="news_value">
+                  <div class="col-md-6" style="margin-top: 10px;">
+                    <img class="img-fluid" style="height: 320px;" t-att-src="image_data_uri(news_value.news)"/>
+                  </div>
+              </t>
+            </div>
+            <hr/>
+            <div class="row" style="text-align:center">
+                <div class="col-md-12">
+                    <h3 style="color: #0f9447;">Video</h3>
+                </div>
+            </div>
+            <hr/>
+            <div class="row" style="text-align:center">
+              <t t-foreach="videos" t-as="video_value">
+                  <div class="col-md-6" style="margin-top: 10px;">
+                    <iframe width="100%" height="315" t-att-src="video_value.video"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen=""></iframe>
+                  </div>
+              </t>
+            </div>
+          <hr/>
+        </template>
+    </data>
+</odoo>

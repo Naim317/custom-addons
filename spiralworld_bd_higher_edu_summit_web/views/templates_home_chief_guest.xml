@@ -1,0 +1,22 @@
+<odoo>
+    <data>
+        <template id="spiralworld_summit_home_chief_guest" name="SprialWorld Summit menu">
+            <hr/>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 style="text-align: center;">INAUGURAL CEREMONY</h2>
+                    <h2 style="text-align: center; color: #0f9447;">Chief Guest</h2>
+                    <img class="center" src="/spiralworld_summit_web/static/assets/images/pm.PNG"
+                         style="height: 300px; width: 300px;"/>
+                    <br/>
+                    <h3 style="text-align: center;">Her Excellency Sheikh Hasina, M.P.</h3>
+                    <p style="text-align: center; color: black;">
+                        Honourable Prime Minister
+                        <br/>
+                        Government of the People's Republic of Bangladesh
+                    </p>
+                </div>
+            </div>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,44 @@
+<odoo>
+    <data>
+        <template id="spiralworld_summit_sponsor" name="SprialWorld Summit Suvenior">
+            <hr/>
+            <div class="row">
+                <div class="col-md-12">
+                    <img class="img-fluid" src="/spiralworld_summit_web/static/assets/images/DCCI-Sponsors.jpg"/>
+                </div>
+            </div>
+<!--            <div class="row footer-fix" id="footer-fix">-->
+<!--                <div class="col-md-12">-->
+<!--                    <a onclick="footerhide()" style="float: right;margin-right: 20px"> <span class="fa fa-close text-danger"></span> </a>-->
+<!--                    <img class="img-fluid" src="/spiralworld_summit_web/static/assets/images/Sponsors-01.png"/>-->
+<!--                </div>-->
+<!--            </div>-->
+            <!--            <div class="row">-->
+            <!--                <div class="col-md-12">-->
+            <!--                    <h1 style="text-align: center; color: #0f9447;">Sponsor</h1>-->
+            <!--                </div>-->
+            <!--            </div>-->
+            <!--            <div class="row">-->
+            <!--                <div class="col-md-2">-->
+            <!--                    <img src="spiralworld_summit_web/static/assets/images/sponsor.PNG"/>-->
+            <!--                </div>-->
+            <!--                <div class="col-md-2">-->
+            <!--                    <img src="spiralworld_summit_web/static/assets/images/sponsor.PNG"/>-->
+            <!--                </div>-->
+            <!--                <div class="col-md-2">-->
+            <!--                    <img src="spiralworld_summit_web/static/assets/images/sponsor.PNG"/>-->
+            <!--                </div>-->
+            <!--                <div class="col-md-2">-->
+            <!--                    <img src="spiralworld_summit_web/static/assets/images/sponsor.PNG"/>-->
+            <!--                </div>-->
+            <!--                <div class="col-md-2">-->
+            <!--                    <img src="spiralworld_summit_web/static/assets/images/sponsor.PNG"/>-->
+            <!--                </div>-->
+            <!--                <div class="col-md-2">-->
+            <!--                    <img src="spiralworld_summit_web/static/assets/images/sponsor.PNG"/>-->
+            <!--                </div>-->
+            <!--            </div>-->
+
+        </template>
+    </data>
+</odoo>

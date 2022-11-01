@@ -1,0 +1,209 @@
+<odoo>
+    <data>
+        <template id="spiralworld_summit_b2b_meeting_room" name="SprialWorld Summit Suvenior">
+            <script src="/web/static/lib/jquery/jquery.js" type="text/javascript"></script>
+            <script src='https://meet.jit.si/external_api.js'></script>
+            <script type="text/javascript" src="/acs_jitsi_meet/static/src/js/jitsi.js"></script>
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 style="text-align: center; color: #0f9447;">B2B Match Making</h3>
+                </div>
+            </div>
+            <div t-if="meeting_user" class="row">
+                <div class="col-md-12">
+                    <a class="btn btn-success" t-att-href="'/meeting-start/'+str(b2b_v.id)">Meeting Start</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-10">
+                    <input type="hidden" name="server_name" t-att-value="server_name"/>
+                    <input type="hidden" name="meeting_name" t-att-value="b2b_v.meeting_code"/>
+                    <input type="hidden" name="meeting_pwd" value=""/>
+                    <input type="hidden" name="site_url" t-att-value="site_url"/>
+                    <t t-if="b2b_v and b2b_v.state=='planned'">
+                        <div class="row acs-webcam" id="acs_videocall"
+                             style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:100%;width:100%;position:absolute;top:0px;left:0px;right:0px;bottom:0px">
+                        </div>
+
+
+                    </t>
+                    <t t-if="b2b_v and b2b_v.state in ['done','cancel','draft']">
+                        <div class="oe_structure oe_empty">
+                            <div id="wrap">
+                                <div class="oe_structure">
+                                    <div class="container text-center mt72"
+                                         style="margin-top: 10vh; text-align: center;">
+                                        <t t-if="b2b_v and b2b_v.state=='draft'">
+                                            <h1 style="color:green;">Meeting is not planned yet.
+                                                <br/>
+                                            </h1>
+                                        </t>
+                                        <t t-if="b2b_v and b2b_v.state=='done'">
+                                            <h1 style="color:green;">Meeting is already finished.
+                                                <br/>
+                                            </h1>
+                                        </t>
+                                        <t t-if="b2b_v and b2b_v.state=='cancel'">
+                                            <h1 style="color:red;">Meeting is Canceled.
+                                                <br/>
+                                            </h1>
+                                        </t>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                    <t t-if="not b2b_v">
+                        <div class="oe_structure oe_empty">
+                            <div id="wrap">
+                                <div class="oe_structure">
+                                    <div class="container text-center mt72"
+                                         style="margin-top: 50vh; text-align: center;">
+                                        <h1 style="color:green;">Meeting is not scheduled yet or Already finished.
+                                            <br/>
+                                            Please check your invitation link again.
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+
+
+                </div>
+                <div class="col-2">
+                    <t t-if="b2b_v.expo_zone_ids" t-foreach="b2b_v.expo_zone_ids"
+                       t-as="value_expo_zone">
+                        <h6>
+                            <t t-esc="value_expo_zone.name"/>
+                        </h6>
+                        <div class="row">
+                            <a href="#" data-toggle="modal" t-att-data-target="'#profileModal'+str(value_expo_zone.id)">
+                                <img src="/spiralworld_summit_web/static/assets/images/info.PNG" class="img-fluid"/>
+                            </a>
+                        </div>
+                        <div class="row">
+                            <t t-foreach="value_expo_zone.document_ids" t-as="value_doc">
+                                <a t-att-href="'http://www.registration.dhakachamber.com/uploads/membersFiles/'+str(value_doc.doc_url)"
+                                   target="_blank">
+                                    <img src="/spiralworld_summit_web/static/assets/images/doc.PNG" class="img-fluid"/>
+                                </a>
+                            </t>
+                        </div>
+                        <div class="row">
+                            <a t-att-href="value_expo_zone.website" target="_blank">
+                                <img src="/spiralworld_summit_web/static/assets/images/website.PNG" class="img-fluid"/>
+                            </a>
+                        </div>
+                        <hr/>
+                        <div class="modal fade" t-att-id="'profileModal'+str(value_expo_zone.id)" tabindex="-1"
+                             role="dialog"
+                             aria-labelledby="profileModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="profileModalLabel">Profile</h5>
+
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true"></span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <table class="table">
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>
+                                                        <t t-esc="value_expo_zone.name"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Portal Address</td>
+                                                    <td>
+                                                        <t t-esc="value_expo_zone.address"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Email</td>
+                                                    <td>
+                                                        <t t-esc="value_expo_zone.email"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Website</td>
+                                                    <td>
+                                                        <t t-esc="value_expo_zone.website"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Sector</td>
+                                                    <td>
+                                                        <t t-esc="value_expo_zone.business_type"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Country</td>
+                                                    <td>
+                                                        <t t-esc="value_expo_zone.country_id.name"/>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </t>
+
+
+                </div>
+            </div>
+            <hr/>
+
+
+            <div class="row">
+                <div class="col-md-6">
+                    <SECTION>
+                        <DIV id="dropzone">
+                            <FORM class="dropzone needsclick" id="demo-upload"
+                                  t-att-action="'/uploadfile/'+str(b2b_v.id)">
+                                <DIV class="dz-message needsclick">
+                                    Drop files here or click to upload.
+                                    <br/>
+                                    (Document or Photo)
+                                </DIV>
+                            </FORM>
+                        </DIV>
+                    </SECTION>
+                </div>
+                <div class="col-md-6">
+
+                    <p id="meeting_id" t-esc="b2b_v.id" style="display:none;"></p>
+                    <button id="load_button" class="btn btn-success">Refresh for documents download</button>
+                    <table id="location" class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>File Name</th>
+                                <th>DownLoad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+            <script src="/spiralworld_summit_web/static/assets/js/doc.js"></script>
+        </template>
+
+    </data>
+</odoo>
+

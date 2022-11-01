@@ -1,0 +1,18 @@
+<odoo>
+    <data>
+        <template id="spiralworld_summit_suvenior" name="SprialWorld Summit Suvenior">
+            <hr/>
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 style="color: #0f9447; text-align: center;"> Souvenir </h3>
+                    <h1 style="text-align: center;">
+                        <a href="/spiralworld_summit_web/static/assets/pdf/Souvenir.pdf" target="_blank">
+                            <span class="fa fa-download mr-3"></span>
+                        </a>
+                    </h1>
+                </div>
+
+            </div>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,28 @@
+<odoo>
+    <data>
+        <template id="spiralworld_summit_country_search" name="SprialWorld Summit Suvenior">
+
+            <div class="row" style="text-align:center">
+                <t t-foreach="country_search" t-as="val">
+                    <h1><t t-esc="val.name"/> </h1>
+                </t>
+<!--                <div t-if="country_v" class="col-md-4" style="margin-top: 10px;" t-foreach="country_v" t-as="value">-->
+<!--                    <div class="card border-success">-->
+<!--                        <div class="card-header pan_color" t-esc="value.name"></div>-->
+<!--                        <div class="card-body">-->
+<!--                            <div class="image">-->
+<!--                                <img t-if="value.logo" t-att-src="image_data_uri(value.logo)" t-att-alt="value.name"-->
+<!--                                     style="width: 100%;" class="img-thumbnail"/>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="card-footer  border-success">-->
+<!--                            <a t-att-href="'/country/'+str(value.id)"> Participating Companies ( <t t-esc="len(value.expo_zone_ids)"/> ) </a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+            </div>
+
+        </template>
+    </data>
+</odoo>

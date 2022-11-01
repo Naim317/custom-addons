@@ -1,0 +1,100 @@
+<odoo>
+    <data>
+        <template id="spiralworld_summit_webinar" name="SprialWorld Summit Suvenior">
+            <div class="row" style="text-align:center">
+                <div class="col-md-12">
+                    <h3 style="color: #0f9447;">Live Stream</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <video t-if="summit.live_url" width="100%" height="600" id="video" t-att-src="summit.live_url"
+                           controls=""></video>
+
+
+<!--                    <iframe t-if="summit.live_url" width="100%" height="500" t-att-src="summit.live_url"-->
+<!--                            title="YouTube video player" frameborder="0"-->
+<!--                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"-->
+<!--                            allowfullscreen=""></iframe>-->
+
+                    <p></p>
+                    <img t-if="not summit.live_url" class="img-fluid"
+                         t-att-src="image_data_uri(summit.live_image)"/>
+
+                    <!--                    <button id="mySelect" class="btn btn-success" onClick="myLive()"><span-->
+                    <!--                            class="fal fa-stream mr-3"></span>Live-->
+                    <!--                    </button>-->
+                    <!--                    <button id="myBut" class="btn btn-success" onclick="myArchive()"><span-->
+                    <!--                            class="fa fa-archive mr-3"></span>Archive-->
+                    <!--                    </button>-->
+                </div>
+            </div>
+            <p></p>
+            <div class="row" style="text-align:center">
+                <div class="col-md-12">
+                    <h3 style="color: #0f9447;">Archive Videos</h3>
+                </div>
+            </div>
+            <div class="row" style="text-align:center">
+                <t t-foreach="archive" t-as="arch_value">
+                    <div class="col-md-6" style="margin-top: 10px;">
+                        <div class="card border-success">
+                            <div class="card-header pan_color">
+                                <t t-esc="arch_value.date"/>
+                            </div>
+                            <div class="card-body">
+                                <h3>
+                                    <t t-esc="arch_value.name"/>
+                                </h3>
+                                <iframe width="100%" height="315" t-att-src="arch_value.webinar_link"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen=""></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </div>
+
+            <div class="row" id="demo"></div>
+            <script src="https://cdn.jsdelivr.net/npm/hls.js"></script>
+            <script>
+              var video = document.getElementById('video');
+                var url = video.src;
+              if (Hls.isSupported()) {
+                var hls = new Hls({
+                  debug: true,
+                });
+                hls.loadSource(url);
+                hls.attachMedia(video);
+                hls.on(Hls.Events.MEDIA_ATTACHED, function () {
+                  video.muted = true;
+                  video.play();
+                });
+              }
+              // hls.js is not supported on platforms that do not have Media Source Extensions (MSE) enabled.
+              // When the browser has built-in HLS support (check using `canPlayType`), we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video element throught the `src` property.
+              // This is using the built-in support of the plain video element, without using hls.js.
+              else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                video.src = url;
+                video.addEventListener('canplay', function () {
+                  video.play();
+                });
+              }
+            </script>
+
+
+            <!--                <script>-->
+            <!--                        function myLive() {-->
+            <!--                          document.getElementById("demo").innerHTML =-->
+            <!--                '<div class="col-md-4" style="margin-top: 10px;"><div class="card border-success"><div class="card-header pan_color text-center">Now</div><div class="card-body"><h4>Webinar</h4><p>12 AM -1 AM</p><h4>DCCI Expo</h4><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque maiores perspiciatis commodi iste corporis labore aut magni, cum laboriosam animi. Voluptate reiciendis esse minima quia explicabo obcaecati, laborum sit reprehenderit!</p></div></div></div><div class="col-md-4" style="margin-top: 10px;"><div class="card border-success"><div class="card-header pan_color text-center">Upcoming</div><div class="card-body"><h4>Webinar</h4><p>12 AM -1 AM</p><h4>DCCI Expo</h4><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque maiores perspiciatis commodi iste corporis labore aut magni, cum laboriosam animi. Voluptate reiciendis esse minima quia explicabo obcaecati, laborum sit reprehenderit!</p></div></div></div>';-->
+            <!--                        }-->
+            <!--                        function myArchive(){-->
+            <!--                          document.getElementById("demo").innerHTML =-->
+            <!--                '<div class="col-md-4" style="margin-top: 10px;"><div class="card border-success"><div class="card-header pan_color text-center">26 Oct, 2021</div><div class="card-body"><h4>Webinar</h4><p>12 AM -1 AM</p><h4>DCCI Expo</h4><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque maiores perspiciatis commodi iste corporis labore aut magni, cum laboriosam animi. Voluptate reiciendis esse minima quia explicabo obcaecati, laborum sit reprehenderit!</p></div></div></div><div class="col-md-4" style="margin-top: 10px;"><div class="card border-success"><div class="card-header pan_color text-center">27 Oct, 2021</div><div class="card-body"><h4>Webinar</h4><p>12 AM -1 AM</p><h4>DCCI Expo</h4><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque maiores perspiciatis commodi iste corporis labore aut magni, cum laboriosam animi. Voluptate reiciendis esse minima quia explicabo obcaecati, laborum sit reprehenderit!</p></div></div></div>';-->
+            <!--                        }-->
+            <!--                    </script>-->
+
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,140 @@
+<odoo>
+    <data>
+        <template id="spiralworld_edu_master" name="SprialWorld Summit Master">
+            <html lang="en">
+                <head>
+                    <title>Bangladesh Education Forum 2022</title>
+                    <meta charset="utf-8"/>
+                    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+                    <meta name="mobile-web-app-capable" content="yes"/>
+
+                    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900"
+                          rel="stylesheet"/>
+
+                    <link rel="stylesheet"
+                          href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+                    <link rel="stylesheet" href="/spiralworld_bd_higher_edu_summit_web/static/assets/dist/dropzone.css"/>
+
+                    <link rel="stylesheet" href="https://summit.dhakachamber.com/im_livechat/external_lib.css"/>
+                    <link rel="stylesheet" href="/spiralworld_bd_higher_edu_summit_web/static/assets/css/style.css"/>
+                    <link rel="stylesheet" href="/spiralworld_bd_higher_edu_summit_web/static/assets/css/bootstrap.min.css"/>
+                    <link rel="stylesheet" href="/spiralworld_bd_higher_edu_summit_web/static/assets/css/chat.css"/>
+
+                </head>
+                <body>
+
+                    <div class="wrapper d-flex align-items-stretch">
+                        <!--                        Menu -->
+                        <t t-call="spiralworld_bd_higher_edu_summit_web.spiralworld_summit_menu"/>
+
+                        <div id="content" class="p-4 p-md-5 pt-5">
+                            <div class="container-fluid">
+
+                                <div class="row logo_right">
+                                    <div class="col-md-12 logo_image_col">
+                                        <img class="logo_image"
+                                             src="/spiralworld_bd_higher_edu_summit_web/static/assets/images/Logo-Right.png"
+                                             style="float: right; width: 220px;"/>
+                                    </div>
+                                </div>
+                                <t t-if="slider" t-call="spiralworld_bd_higher_edu_summit_web.spiralworld_summit_slider"/>
+                                <!--                                stall -->
+                                <t t-if="b2b_meeting"
+                                   t-call="spiralworld_bd_higher_edu_summit_web.spiralworld_summit_b2b_meeting_room"/>
+                                <!--                                stall -->
+                                <t t-if="stall" t-call="spiralworld_bd_higher_edu_summit_web.spiralworld_summit_stall"/>
+                                <!--                                concept_note -->
+                                <t t-if="concept_note" t-call="spiralworld_bd_higher_edu_summit_web.spiralworld_summit_concept_note"/>
+                                <!--                                speaker -->
+                                <t t-if="speaker_detail"
+                                   t-call="spiralworld_bd_higher_edu_summit_web.spiralworld_summit_speaker_detail"/>
+
+                                <!--                                b2b_meeting -->
+                                <t t-if="b2b" t-call="spiralworld_bd_higher_edu_summit_web.spiralworld_summit_b2b_meeting"/>
+                                <!--                                myb2b-->
+                                <t t-if="my_b2b" t-call="spiralworld_bd_higher_edu_summit_web.spiralworld_summit_my_b2b_meeting"/>
+                                <!--                                country -->
+                                <t t-if="participating_institute" t-call="spiralworld_bd_higher_edu_summit_web.spiralworld_summit_participating_institute"/>
+                                <t t-if="participating_details" t-call="spiralworld_bd_higher_edu_summit_web.spiralworld_summit_participating_details"/>
+                                <!--                                expo_zone -->
+                                <t t-if="expo_zone" t-call="spiralworld_bd_higher_edu_summit_web.spiralworld_summit_expo_zone"/>
+                                <!--                                help -->
+                                <t t-if="help" t-call="spiralworld_bd_higher_edu_summit_web.spiralworld_summit_help"/>
+
+                                <t t-if="supplementary" t-call="spiralworld_bd_higher_edu_summit_web.spiralworld_summit_supplementary"/>
+                                <!--                                login -->
+                                <t t-if="login" t-call="spiralworld_bd_higher_edu_summit_web.spiralworld_higher_edu_login"/>
+                                <!--                                schedule -->
+                                <t t-if="schedule" t-call="spiralworld_bd_higher_edu_summit_web.spiralworld_summit_schedule"/>
+                                <!--                                webinar -->
+                                <t t-if="webinar" t-call="spiralworld_bd_higher_edu_summit_web.spiralworld_bd_higher_edu_summit_webinar"/>
+
+                                <!--                                About -->
+                                <t t-if="about" t-call="spiralworld_bd_higher_edu_summit_web.spiralworld_summit_home_about"/>
+                                <!--                                chief Guest -->
+                                <t t-if="chief_guest"
+                                   t-call="spiralworld_bd_higher_edu_summit_web.spiralworld_summit_home_chief_guest"/>
+                                <!--                                Home Menu -->
+                                <t t-if="home_menu" t-call="spiralworld_bd_higher_edu_summit_web.spiralworld_summit_home_menu"/>
+
+                                <!--                                Speaker -->
+                                <t t-if="speaker" t-call="spiralworld_bd_higher_edu_summit_web.spiralworld_summit_speaker"/>
+                                <!--                                Suvenior -->
+                                <t t-if="suvenior" t-call="spiralworld_bd_higher_edu_summit_web.spiralworld_summit_suvenior"/>
+                                <!--                                Sponsor -->
+                                <t t-if="sponsor" t-call="spiralworld_bd_higher_edu_summit_web.spiralworld_summit_sponsor"/>
+
+                                <div class="row" style="text-align:center">
+                                    <div class="col-md-12">
+                                        <button class="pull-right" onclick="topFunction()" id="myBtn" title="Go to top">
+                                            <span class="fa fa-arrow-up"></span>
+                                        </button>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+                    <script src="/spiralworld_bd_higher_edu_summit_web/static/assets/js/popper.js"></script>
+                    <script src="/spiralworld_bd_higher_edu_summit_web/static/assets/dist/dropzone.js"></script>
+                    <script src="/spiralworld_bd_higher_edu_summit_web/static/assets/js/bootstrap.min.js"></script>
+
+
+
+                    <script src="/spiralworld_bd_higher_edu_summit_web/static/assets/js/main.js"></script>
+
+                    <script type="text/javascript"
+                            src="https://summit.dhakachamber.com/im_livechat/external_lib.js"></script>
+                    <script type="text/javascript" src="https://summit.dhakachamber.com/im_livechat/loader/1"></script>
+
+
+                    <script>
+                        var mybutton = document.getElementById("myBtn");
+
+                        window.onscroll = function() {scrollFunction()};
+
+                        function scrollFunction() {
+                        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                        mybutton.style.display = "block";
+                        } else {
+                        mybutton.style.display = "none";
+                        }
+                        }
+
+                        function topFunction() {
+                        document.body.scrollTop = 0;
+                        document.documentElement.scrollTop = 0;
+                        }
+                    </script>
+
+                </body>
+            </html>
+        </template>
+
+    </data>
+</odoo>

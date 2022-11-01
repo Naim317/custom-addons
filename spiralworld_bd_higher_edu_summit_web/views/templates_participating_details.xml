@@ -1,0 +1,95 @@
+<odoo>
+    <data>
+        <template id="spiralworld_summit_participating_details" name="SprialWorld Summit Suvenior">
+
+            <div class="row" style="text-align:center">
+
+                <div t-if="expo_zone_details" class="col-md-12" style="margin-top: 18px;">
+                    <div class="card border-success">
+                        <div class="card-header pan_color" t-esc="expo_zone_details.name"></div>
+                        <div class="row">
+                          <div class="col-sm-6">
+                            <div class="card">
+                              <div class="card-body">
+                                <h5 class="card-title">Contact Person</h5>
+                                <p class="card-text" t-foreach="expo_zone_details.edu_user_ids" t-as="value">
+                                    <ul>
+                                        <li style="list-style:none;">Name: <t t-esc="value.name"/>, Email: <t t-esc="value.email"/></li>
+                                    </ul>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-6 ">
+                            <div class="card">
+                              <div class="card-body">
+                                <h5 class="card-title">Other Information Section</h5>
+                                <p class="card-text" t-foreach="expo_zone_details.edu_user_ids" t-as="value">
+                                    <ul>
+                                        <li style="list-style:none;">Demo Data</li>
+                                    </ul>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center py-2">
+                            <a href="#" class="btn btn-primary mr-1">Chat</a>
+                            <a href="#" class="btn btn-primary ml-1">Call</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="card">
+                <div class="chat">
+                    <div class="chat-header clearfix">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="chat-about">
+                                    <h6 class="m-b-0">Chat</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-history scroll" id="scrollChat">
+                        <ul class="m-b-0" id="chat_message">
+<!--                            <li class="clearfix">-->
+<!--                                <div class="message-data text-right">-->
+<!--                                    <span class="message-data-time">10:10 AM, Today</span>-->
+<!--                                    <img src="hts" alt="avatar"/>-->
+<!--                                </div>-->
+<!--                                <div class="message other-message float-right">-->
+<!--                                    Hi Aiden, how are you? How is the-->
+<!--                                    project coming along?-->
+<!--                                </div>-->
+<!--                            </li>-->
+<!--                            <li class="clearfix" t-foreach="agm.agm_chat_ids" t-as="value_chat">-->
+<!--                                <div class="message-data">-->
+<!--                                    <span class="message-data-time" t-esc="value_chat.create_date"></span>-->
+<!--                                </div>-->
+<!--                                <div class="message my-message" t-esc="value_chat.message"></div>-->
+<!--                            </li>-->
+                        </ul>
+                    </div>
+                    <div class="chat-message clearfix">
+                        <div class="input-group mb-0">
+                            <input type="hidden" id="edu_expo_zone_id" t-att-value="expo_zone_details.id"/>
+                             <textarea class="form-control" rows="2" id="comment" placeholder="Enter text here..."></textarea>
+                        </div>
+                        <br/>
+                        <div class="input-group mb-0" style="display:block">
+                            <button type="button" id="message" class="btn btn-primary" style="float:right">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+            <script src="/spiralworld_bd_higher_edu_summit_web/static/assets/lib/jquery/jquery.min.js"></script>
+            <script src="/spiralworld_bd_higher_edu_summit_web/static/assets/js/app.js"></script>
+
+        </template>
+    </data>
+</odoo>

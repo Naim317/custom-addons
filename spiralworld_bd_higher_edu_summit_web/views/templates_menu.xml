@@ -1,0 +1,75 @@
+<odoo>
+    <data>
+        <template id="spiralworld_summit_menu" name="SprialWorld Summit menu">
+            <nav id="sidebar">
+                <div class="custom-menu">
+                    <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                    </button>
+                </div>
+                <div class="img text-center py-4" style="background-color: #ebf7ec;padding: 10px">
+                    <div class="user-logo">
+                        <div class="img">
+                            <img class="img-fluid" src="/spiralworld_bd_higher_edu_summit_web/static/assets/images/summit.png"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <img class="img-fluid" src="/spiralworld_bd_higher_edu_summit_web/static/assets/images/organizedby.png" style="height: 100px"/>
+                </div>
+                <ul class="list-unstyled components mb-5">
+                    <li t-attf-class="#{menu_action == 'home' and 'active' or ''}">
+                        <a href="/home" t-attf-style="#{menu_action == 'home' and 'color: white' or ''}">
+                            <span class="fa fa-home mr-3"></span>
+                            Home
+                        </a>
+                    </li>
+                    <li t-attf-class="#{menu_action == 'schedule' and 'active' or ''}">
+                        <a href="/schedule" t-attf-style="#{menu_action == 'schedule' and 'color: white' or ''}">
+                            <span class="fa fa-clock-o mr-3"></span>
+                            Program Schedule
+                        </a>
+                    </li>
+                    <li t-attf-class=" #{menu_action == 'webinar' and 'active' or ''}">
+                        <a href="/webinar" t-attf-style="#{menu_action == 'webinar' and 'color: white' or ''}">
+                            <span class="fa fa-handshake-o mr-3"></span>
+                            Webinars
+                        </a>
+                    </li>
+                    <li t-attf-class=" #{menu_action == 'speaker' and 'active' or ''}">
+                        <a href="/speaker" t-attf-style="#{menu_action == 'speaker' and 'color: white' or ''}">
+                            <span class="fa fa-handshake-o mr-3"></span>
+                            Session Speakers
+                        </a>
+                    </li>
+                    <li t-attf-class=" #{menu_action == 'participating_institute' and 'active' or ''}">
+                        <a href="/participating-institute" t-attf-style="#{menu_action == 'participating_institute' and 'color: white' or ''}">
+                            <span class="fa fa-cog mr-3"></span>
+                            Participating Institute
+                        </a>
+                    </li>
+                    <li t-attf-class=" #{menu_action == 'help' and 'active' or ''}">
+                        <a href="/help" t-attf-style="#{menu_action == 'help' and 'color: white' or ''}">
+                            <span class="fa fa-support mr-3"></span>
+                            Help Desk
+                        </a>
+                    </li>
+                    <li t-attf-class=" #{menu_action == 'supplementary' and 'active' or ''}">
+                        <a href="/supplementary" t-attf-style="#{menu_action == 'supplementary' and 'color: white' or ''}">
+                            <span class="fa fa-picture-o mr-3"></span>
+                            Supplementary
+                        </a>
+                    </li>
+                </ul>
+                <div t-if="puser.id == 4" class="text-center">
+                    <a href="/login" class="btn btn-danger"> <span class="fa fa-sign-in mr-3"></span>Login </a>
+                </div>
+                <div t-else="" class="text-center">
+                    <a href="/web/session/logout?redirect=/home" class="btn btn-danger"> <span class="fa fa-sign-out mr-3"></span> Logout </a>
+                </div>
+
+
+            </nav>
+        </template>
+    </data>
+</odoo>

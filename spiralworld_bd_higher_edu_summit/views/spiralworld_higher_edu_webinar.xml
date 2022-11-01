@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_spiral_world_higher_webinar_tree" model="ir.ui.view">
+            <field name="name">Webinar</field>
+            <field name="model">spiral.world.higher.webinar</field>
+            <field name="arch" type="xml">
+                <tree string="Stalls">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_spiral_world_higher_webinar_form" model="ir.ui.view">
+            <field name="name">Webinar</field>
+            <field name="model">spiral.world.higher.webinar</field>
+            <field name="arch" type="xml">
+
+                <form string="Webinar">
+                    <sheet>
+                        <label for="edu_summit_id" class="oe_edit_only"/>
+                        <h1>
+                            <field name="edu_summit_id"/>
+                        </h1>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                        </group>
+                        <field name="schedule_detail" widget="html" />
+
+                        <notebook>
+                            <page name="Webinar Link" string="Photo">
+                                <field name="edu_webinar_link_ids">
+                                    <tree string="Webinar Link">
+                                        <field name="name"/>
+                                        <field name="start_date"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="open_view_spiral_world_higher_webinar_tree" model="ir.actions.act_window">
+            <field name="name">Webinar</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">spiral.world.higher.webinar</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No Record found!
+                </p>
+            </field>
+        </record>
+
+        <record id="open_view_spiral_world_summit_higher_webinar_tree" model="ir.actions.act_window">
+            <field name="name">Webinar</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">spiral.world.higher.webinar</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No Record found!
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

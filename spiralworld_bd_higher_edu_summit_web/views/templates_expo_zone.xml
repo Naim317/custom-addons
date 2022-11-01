@@ -1,0 +1,48 @@
+<odoo>
+    <data>
+        <template id="spiralworld_summit_expo_zone" name="SprialWorld Summit Suvenior">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 t-if="country_name" style="color: #0f9447; text-align: center;" t-esc="country_name.name"></h3>
+                </div>
+            </div>
+            <div class="row" style="text-align:center">
+                <div class="col-md-1">
+                    <a href="/country" class="btn btn-success pull-left"><span class="fa fa-arrow-left mr-3"></span>Back
+                    </a>
+                </div>
+                <div class="col-md-11">
+                    <form class="form-inline" t-att-action="'/country/'+str(country_name.id)" method="get">
+                        <input class="form-control" name="search" type="text" placeholder="Search Company Name"/>
+                        <button class="btn btn-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row" style="text-align:center">
+                <div t-if="expo" class="col-md-4" style="margin-top: 10px;" t-foreach="expo" t-as="value">
+                    <div class="card border-success">
+                        <div class="card-header pan_color" t-esc="value.name"></div>
+                        <div class="card-body">
+                            <img t-if="value.stall_logo" t-att-src="image_data_uri(value.stall_logo)"
+                                 t-att-alt="value.name"
+                                 class="img-thumbnail" style="width: 100%;"/>
+                        </div>
+                        <div class="card-footer  border-success">
+                            <a t-att-href="'/expo_zone/'+str(value.id)">Visit Virtual Stall</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row" style="text-align:center">
+                <div class="col-md-12">
+                    <a href="/country" class="btn btn-success pull-right"><span class="fa fa-arrow-left mr-3"></span>
+                        Back
+                    </a>
+                </div>
+            </div>
+
+        </template>
+    </data>
+</odoo>

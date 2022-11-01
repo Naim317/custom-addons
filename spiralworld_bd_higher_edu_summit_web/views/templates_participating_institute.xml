@@ -1,0 +1,27 @@
+<odoo>
+    <data>
+        <template id="spiralworld_summit_participating_institute" name="SprialWorld Summit Suvenior">
+
+            <div class="row" style="text-align:center">
+
+                <div t-if="expo_zones" class="col-md-4" style="margin-top: 10px;" t-foreach="expo_zones" t-as="value">
+                    <div class="card border-success">
+                        <div class="card-header pan_color" t-esc="value.name"></div>
+                        <div class="card-body">
+                            <div class="image">
+                                <img t-if="value.logo" t-att-src="image_data_uri(value.logo)" t-att-alt="value.name"
+                                     style="width: 100%;" class="img-thumbnail"/>
+                            </div>
+                        </div>
+                        <div class="card-footer  border-success">
+                            <a t-att-href="'/participating-institute/'+str(value.id)"> Contact With this Institute </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </template>
+    </data>
+</odoo>
